@@ -111,7 +111,7 @@ async def on_message(message):
                 users[message.author]["settings"]["types"] = get_defaults(int(input_message.content))
                 users[message.author]["settings"]["rep num"] = int(input_message.content)
                 # отправляем меню настроек
-                await client.send_message(message.channel, str(get_setting_str(int(input_message.content))))
+                await client.send_message(message.channel, str(get_settings_str(int(input_message.content))))
                 # лог
                 await session_log.add_event(
                     "3. Send settings " + get_report_name(users[message.author]["settings"]["rep num"]))
